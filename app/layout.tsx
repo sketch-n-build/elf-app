@@ -33,6 +33,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Lora, Jost } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 // import Nav from "@/components/Nav";
 
 const cormorant = Cormorant_Garamond({
@@ -72,6 +73,7 @@ export default function RootLayout({
       >
         <Nav />
         <main className="pt-[68px] min-h-[calc(80vh)]">{children}</main>
+        <Footer />
       </body>
     </html>
   );

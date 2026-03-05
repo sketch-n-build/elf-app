@@ -645,7 +645,7 @@ export default function HomePage() {
       <StorySection />
       <TestimonialsSection />
       <CtaBand />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
