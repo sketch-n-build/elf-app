@@ -1,72 +1,392 @@
-@import "tailwindcss";
+/* @import "tailwindcss"; */
 
 /* ===============================
    Tailwind v4 Theme Tokens
    =============================== */
 
-@theme {
+/* @theme { */
 
   /* Base */
-  --color-background: #064e38;
+  /* --color-background: #064e38;
   --color-foreground: #0b1f17;
 
   --color-nav-bg: #1a251d;
-  --color-nav-text: #5e655d;
+  --color-nav-text: #5e655d; */
 
   /* Emerald Scale */
-  --color-emerald-50:  #e8f3ef;
+  /* --color-emerald-50:  #e8f3ef;
   --color-emerald-100: #cfe6dd;
   --color-emerald-200: #a8d4c3;
   --color-emerald-300: #79bfa6;
   --color-emerald-400: #4ea889;
   --color-emerald-500: #1f7a5c; /* Primary Emerald */
-  --color-emerald-600: #18664c;
+  /* --color-emerald-600: #18664c;
   --color-emerald-700: #134f3b;
   --color-emerald-800: #0d382a;
-  --color-emerald-900: #07231a;
+  --color-emerald-900: #07231a; */ 
 
   /* Accent */
-  --color-accent-gold: #c6a75e;
-  --color-accent-gold-soft: #e6d3a3;
+  /* --color-accent-gold: #c6a75e; */
+  /* --color-accent-gold-soft: #e6d3a3; */
 
   /* Surfaces */
-  --color-card-bg: #ffffff;
-  --color-card-border: #dbe7e2;
+  /* --color-card-bg: #ffffff;
+  --color-card-border: #dbe7e2; */
 
   /* Muted */
-  --color-muted-bg: #edf4f1;
-  --color-muted-text: #4c5e57;
+  /* --color-muted-bg: #edf4f1;
+  --color-muted-text: #4c5e57; */
 
   /* States */
-  --color-success: #15803d;
+  /* --color-success: #15803d;
   --color-warning: #d4a017;
-  --color-error: #b91c1c;
+  --color-error: #b91c1c; */
 
   /* Shadow Tint */
-  --shadow-emerald: 0 10px 30px rgba(15, 56, 42, 0.15);
-}
+  /* --shadow-emerald: 0 10px 30px rgba(15, 56, 42, 0.15);
+} */
 
 /* ===============================
    Dark Mode Support
    =============================== */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   @theme {
     --color-background: #07231a;
     --color-foreground: #ededed;
     --color-card-bg: #0d382a;
   }
-}
+} */
 
 /* ===============================
    Base Styling
    =============================== */
 
-body {
+/* body {
   @apply bg-background text-foreground;
   font-family: var(--font-inter), system-ui, sans-serif;
 }
 
 .convert_upper{
   text-transform: uppercase;
+} */
+
+@import "tailwindcss";
+
+/* ────────────────────────────────────────────
+   BRAND CSS VARIABLES
+──────────────────────────────────────────── */
+:root {
+  --deep:    #064E38;
+  --emerald: #0D6E4F;
+  --mid:     #10B981;
+  --glow:    #34D399;
+  --pale:    #A8E6D8;
+  --gold:    #C9A84C;
+  --gold-lt: #E8C97A;
+  --ink:     #0C1810;
+  --cream:   #FAF6EF;
+  --warm:    #F0F7F3;
+  --warm2:   #E4F0EB;
+  --grey:    #4A6458;
+  --mgrey:   #8AA899;
+  --border:  #C4DDD5;
+  --shadow:  rgba(6, 78, 56, 0.10);
+}
+
+/* ────────────────────────────────────────────
+   BASE RESET & DEFAULTS
+──────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* margin: 0;
+  padding: 0; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-jost), system-ui, sans-serif;
+  font-weight: 300;
+  color: var(--ink);
+  background: var(--cream);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-jost), system-ui, sans-serif;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
+/* ────────────────────────────────────────────
+   KEYFRAME ANIMATIONS
+──────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes dotPulse {
+  0%   { transform: scale(1);    opacity: 0.45; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+
+/* ────────────────────────────────────────────
+   ANIMATION UTILITY CLASSES
+──────────────────────────────────────────── */
+.anim-fade-up {
+  opacity: 0;
+  animation: fadeUp 0.7s forwards;
+}
+.anim-fade-up-1 { animation-delay: 0.12s; }
+.anim-fade-up-2 { animation-delay: 0.24s; }
+.anim-fade-up-3 { animation-delay: 0.36s; }
+.anim-fade-up-4 { animation-delay: 0.50s; }
+
+.anim-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s 0.4s forwards;
+}
+
+.anim-float {
+  animation: float 5s ease-in-out infinite;
+}
+.anim-float-2 { animation: float 4.5s 1s   ease-in-out infinite; }
+.anim-float-3 { animation: float 4.5s 2.2s ease-in-out infinite; }
+
+.anim-marquee {
+  animation: marqueeScroll 24s linear infinite;
+}
+
+.badge-dot-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid var(--glow);
+  animation: dotPulse 1.6s ease infinite;
+}
+
+/* ────────────────────────────────────────────
+   SHARED EYEBROW
+──────────────────────────────────────────── */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.ey-dash {
+  width: 24px;
+  height: 1px;
+  background: var(--mid);
+  flex-shrink: 0;
+}
+.ey-txt {
+  font-size: 0.62rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+/* ────────────────────────────────────────────
+   NAV LINK UNDERLINE ANIMATION
+──────────────────────────────────────────── */
+.nav-link {
+  position: relative;
+  padding-bottom: 3px;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 239, 0.5);
+  transition: color 0.2s;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--glow);
+  transition: width 0.3s;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--pale);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ────────────────────────────────────────────
+   PCARD LINK HOVER
+──────────────────────────────────────────── */
+.pcard-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  font-weight: 500;
+  cursor: pointer;
+  transition: gap 0.2s;
+}
+.pcard-link:hover { gap: 13px; }
+
+/* ────────────────────────────────────────────
+   IC (IMPACT CARD) BOTTOM BORDER
+──────────────────────────────────────────── */
+.ic-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--emerald), var(--glow));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+.ic-card:hover::after { transform: scaleX(1); }
+
+/* ────────────────────────────────────────────
+   FOOTER SOCIAL HOVER
+──────────────────────────────────────────── */
+.ft-soc {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  border: 1px solid rgba(168, 230, 216, 0.13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  color: rgba(250, 246, 239, 0.35);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.ft-soc:hover {
+  border-color: var(--glow);
+  color: var(--glow);
+}
+
+/* ────────────────────────────────────────────
+   ABTN (AMOUNT BUTTON)
+──────────────────────────────────────────── */
+.abtn {
+  border: 1px solid var(--border);
+  background: var(--warm);
+  border-radius: 8px;
+  padding: 14px 7px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.abtn:hover, .abtn.active {
+  background: var(--deep);
+  border-color: var(--deep);
+}
+.abtn .av {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--deep);
+  display: block;
+}
+.abtn:hover .av, .abtn.active .av {
+  color: var(--pale);
+}
+.abtn .ai {
+  font-size: 0.6rem;
+  color: var(--grey);
+  display: block;
+  margin-top: 2px;
+}
+.abtn:hover .ai, .abtn.active .ai {
+  color: rgba(168, 230, 216, 0.55);
+}
+
+/* ────────────────────────────────────────────
+   TIER BUTTON
+──────────────────────────────────────────── */
+.tier-btn {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s;
+  width: 100%;
+}
+.tier-btn:hover,
+.tier-btn.active {
+  background: rgba(52, 211, 153, 0.10);
+  border-color: rgba(52, 211, 153, 0.33);
+}
+
+/* ────────────────────────────────────────────
+   ROLE BUTTON (AUTH)
+──────────────────────────────────────────── */
+.rbtn {
+  border: 1px solid var(--border);
+  background: var(--warm);
+  border-radius: 7px;
+  padding: 12px 7px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.rbtn:hover, .rbtn.active {
+  border-color: var(--mid);
+  background: var(--warm2);
+}
+
+/* ────────────────────────────────────────────
+   RESPONSIVE HELPERS
+──────────────────────────────────────────── */
+.section-wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 52px;
+}
+
+@media (max-width: 768px) {
+  .section-wrap {
+    padding: 0 20px;
+  }
 }
