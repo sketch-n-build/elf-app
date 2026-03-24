@@ -5,8 +5,9 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
-  output   = "../app/generated/prisma"
+  provider = "prisma-client-js"
+  // engineType      = "binary"
+  // engineType = "library"
 }
 
 datasource db {
@@ -14,7 +15,7 @@ datasource db {
 }
 
 model User {
-  id          String   @id @default(uuid())
+  id          String   @id @default(uuid()) @db.Uuid
   email       String   @unique
   password    String
   firstName   String
@@ -41,7 +42,7 @@ enum UserRole {
 }
 
 model Profile {
-  id        String   @id @default(uuid())
+  id        String   @id @default(uuid()) @db.Uuid
   userId    String   @unique
   user      User     @relation(fields: [userId], references: [id])
 
@@ -53,7 +54,7 @@ model Profile {
 }
 
 model Donor {
-  id          String   @id @default(uuid())
+  id          String   @id @default(uuid()) @db.Uuid
   email       String?
   fullName    String?
   phone       String?
@@ -67,7 +68,7 @@ model Donor {
 }
 
 model Donation {
-  id                 String   @id @default(uuid())
+  id                 String   @id @default(uuid()) @db.Uuid
   donorId            String?
   donor              Donor?   @relation(fields: [donorId], references: [id])
 
@@ -102,7 +103,7 @@ enum PaymentStatus {
 }
 
 model Campaign {
-  id          String   @id @default(uuid())
+  id          String   @id @default(uuid()) @db.Uuid
   title       String
   description String
   targetAmount Decimal @db.Decimal(10,2)
@@ -117,7 +118,7 @@ model Campaign {
 }
 
 model Project {
-  id            String   @id @default(uuid())
+  id            String   @id @default(uuid()) @db.Uuid
   title         String
   slug          String   @unique
   description   String
@@ -144,8 +145,8 @@ model Project {
 }
 
 model ProjectUpdate {
-  id         String   @id @default(uuid())
-  projectId  String
+  id         String   @id @default(uuid()) @db.Uuid
+  projectId  String   @db.Uuid
   project    Project  @relation(fields: [projectId], references: [id])
 
   title      String
@@ -165,7 +166,7 @@ enum ProjectStatus {
 }
 
 model Blog {
-  id          String   @id @default(uuid())
+  id          String   @id @default(uuid()) @db.Uuid
   title       String
   slug        String   @unique
   excerpt     String?
@@ -187,8 +188,8 @@ model Blog {
 }
 
 model Investment {
-  id         String   @id @default(uuid())
-  userId     String
+  id         String   @id @default(uuid()) @db.Uuid
+  userId     String   @db.Uuid
   user       User     @relation(fields: [userId], references: [id])
 
   projectId  String

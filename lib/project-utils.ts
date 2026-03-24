@@ -1,4 +1,6 @@
-import { ProjectCreator, ProjectStatus } from "@/types/project";
+// import { ProjectCreator, ProjectStatus } from "@/types/project";
+
+import { ProjectCreator, ProjectStatus } from "./types/Project";
 
 export function fullName(creator: ProjectCreator): string {
   return `${creator.firstName} ${creator.lastName}`;
