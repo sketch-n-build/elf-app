@@ -41,6 +41,7 @@ export function welcomeEmail(user: BaseUser) {
   };
 }
 
+
 /* ── 2. Email verification ───────────────────────────────────── */
 export function verifyEmailEmail(user: BaseUser, verifyUrl: string) {
   const subject = "Please verify your email";
@@ -213,6 +214,50 @@ export function contactForwardEmail({
       linkUrl:   `${process.env.NEXT_PUBLIC_APP_URL}/contact`,
       linkLabel: "View Dashboard",
       metaLine:  `Subject: <strong>${subject}</strong> · From: <strong>${senderName}</strong>`,
+    }),
+  };
+}
+
+// ── 7. Staff account creation ─────────────────────────────────
+export function welcomeStaffEmail(user: BaseUser, password: string) {
+  const subject = "Welcome to Eleje Legacy – Your Staff Account";
+
+  return {
+    subject,
+    html: createEmailTemplate({
+      subject,
+      variant: "welcome",
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+
+      message: `
+        <p>Welcome to <strong>Eleje Legacy</strong>.</p>
+
+        <p>An account has been created for you as a member of our team. You can now access the platform and begin your work.</p>
+
+        <p><strong>Your login details:</strong></p>
+        <p>
+          Email: <strong>${user.email}</strong><br/>
+          Temporary Password: <strong>${password}</strong>
+        </p>
+
+        <p style="margin-top: 16px;">
+          For security reasons, we strongly recommend that you change your password immediately after logging in.
+        </p>
+
+        <p>
+          If you did not expect this email, please contact the administrator immediately.
+        </p>
+      `,
+
+      linkUrl: `${process.env.NEXT_PUBLIC_APP_URL}/auth`,
+      linkLabel: "Login to Your Account",
+
+      metaLine: `
+        This is a staff account issued by Eleje Legacy.<br/>
+        Please keep your login credentials secure.
+      `,
     }),
   };
 }
