@@ -5,6 +5,7 @@ import Link from "next/link";
 import MarqueeStrip from "./components/home/MarqueeStrip";
 import CtaBand from "./components/home/CtaBand";
 import Footer from "./components/Footer";
+import ElojeLogo from "./components/ui/ElojeLogo";
 
 /* ─── Sub-components (server) ─────────────────────────── */
 
@@ -154,13 +155,9 @@ function HeroSection() {
       <div className="hidden lg:flex relative z-10 items-center justify-center p-20 anim-fade-in">
         <div className="relative">
           {/* Brand mark */}
-          <svg
-            className="anim-float"
-            width="290"
-            height="330"
-            viewBox="0 0 200 230"
-            fill="none"
-            style={{ filter: "drop-shadow(0 0 48px rgba(52,211,153,0.18))" }}
+          {/* <ElojeLogo width={300} height={300} /> */}
+          {/* <ElojeLogo
+            // style={{ filter: "drop-shadow(0 0 48px rgba(52,211,153,0.18))" }}
           >
             <defs>
               <linearGradient id="ga" x1="0%" y1="0%" x2="80%" y2="100%">
@@ -176,10 +173,10 @@ function HeroSection() {
             <path d="M96 52C118 58 140 78 145 106C154 140 140 182 112 200C96 210 76 210 62 200C48 190 40 172 40 154C56 164 76 165 90 152C108 136 110 106 98 78C88 56 70 44 56 40C68 30 82 42 96 52Z" fill="url(#ga)" />
             <circle cx="64" cy="66" r="18" fill="url(#gc)" />
             <path d="M46 84C28 100 22 124 28 146C32 164 48 178 66 180C72 160 74 136 76 112C74 94 62 80 46 84Z" fill="url(#gc)" />
-          </svg>
+          </ElojeLogo> */}
 
           {/* Float cards */}
-          <div
+          {/* <div
             className="absolute rounded-[13px] px-[17px] py-[13px] anim-float-2"
             style={{
               bottom: 18,
@@ -198,9 +195,9 @@ function HeroSection() {
             <div style={{ fontSize: "0.6rem", color: "var(--mgrey)", marginTop: 2 }}>
               New beneficiaries enrolled
             </div>
-          </div>
+          </div> */}
 
-          <div
+          {/* <div
             className="absolute rounded-[13px] px-[17px] py-[13px] anim-float-3"
             style={{
               top: 36,
@@ -219,7 +216,7 @@ function HeroSection() {
             <div style={{ fontSize: "0.6rem", color: "var(--mgrey)", marginTop: 2 }}>
               Raised · 68% of target
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
@@ -420,12 +417,7 @@ function StorySection() {
                   background: "radial-gradient(ellipse at 35% 35%, rgba(52,211,153,0.13) 0%, transparent 65%)",
                 }}
               />
-              <svg width="190" height="220" viewBox="0 0 200 230" fill="none" className="relative z-10">
-                <circle cx="118" cy="30" r="26" fill="rgba(168,230,216,0.65)" />
-                <path d="M96 52C118 58 140 78 145 106C154 140 140 182 112 200C96 210 76 210 62 200C48 190 40 172 40 154C56 164 76 165 90 152C108 136 110 106 98 78C88 56 70 44 56 40C68 30 82 42 96 52Z" fill="rgba(168,230,216,0.45)" />
-                <circle cx="64" cy="66" r="18" fill="rgba(52,211,153,0.65)" />
-                <path d="M46 84C28 100 22 124 28 146C32 164 48 178 66 180C72 160 74 136 76 112C74 94 62 80 46 84Z" fill="rgba(52,211,153,0.45)" />
-              </svg>
+              <ElojeLogo width={100} height={85} />
               {/* Year badge */}
               <div
                 className="absolute -bottom-4 -right-4 w-[108px] h-[108px] rounded-full flex flex-col items-center justify-center shadow-2xl"
