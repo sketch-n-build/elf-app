@@ -53,7 +53,7 @@ export const POST = async (request: NextRequest) => {
 
     const token = generateJwtToken(user.id, secret, "15m"); // short window for security
     const hashedToken = await bcrypt.hash(token, 10);
-    const resetUrl = `${process.env.WEB_BASE_URL}/reset-password?userId=${user.id}&token=${token}`;
+    const resetUrl = `${process.env.WEB_BASE_URL}/auth/reset-password?userId=${user.id}&token=${token}`;
 
     // Upsert so re-requests overwrite the old token
     await prisma.passwordResetToken.upsert({
