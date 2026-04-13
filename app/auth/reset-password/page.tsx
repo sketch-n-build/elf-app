@@ -281,7 +281,7 @@ function ResetPasswordInner() {
 
         {/* Footer */}
         <div style={{ marginTop: 28, paddingTop: 22, borderTop: "1px solid var(--border)", textAlign: "center" }}>
-          <Link href="/login" style={{ fontSize: "0.78rem", color: "var(--mid)", display: "inline-flex", alignItems: "center", gap: 5 }}>
+          <Link href="/auth/login" style={{ fontSize: "0.78rem", color: "var(--mid)", display: "inline-flex", alignItems: "center", gap: 5 }}>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
             Back to login
           </Link>
@@ -322,7 +322,7 @@ function InvalidState() {
         This password reset link is missing required parameters. Please request a new one.
       </p>
       <Link
-        href="/forgot-password"
+        href="/auth/forgot-password"
         style={{
           display: "inline-flex",
           alignItems: "center",

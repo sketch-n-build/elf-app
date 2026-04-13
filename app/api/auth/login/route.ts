@@ -73,7 +73,7 @@ export const POST = async (request: NextRequest) => {
 
         const token = generateJwtToken(user.id, secret, "1h");
         const hashedToken = await bcrypt.hash(token, 10);
-        const verificationUrl = `${process.env.WEB_BASE_URL}/verify-email?userId=${user.id}&token=${token}`;
+        const verificationUrl = `${process.env.WEB_BASE_URL}/auth/verify-email?userId=${user.id}&token=${token}`;
 
         await prisma.verificationToken.upsert({
           where: { userId: user.id },
@@ -110,6 +110,8 @@ export const POST = async (request: NextRequest) => {
     const accessToken = generateJwtToken(user.id, secret, "15m", {
       email: user.email,
       role: user.role,
+      firstName: user.firstName,
+      lastName: user.lastName,
     });
 
     const refreshToken = generateJwtToken(user.id, secret, "8h", {
@@ -129,7 +131,14 @@ export const POST = async (request: NextRequest) => {
       {
         success: true,
         message: "Login successful",
-        data: { accessToken },
+        data: { 
+          id: user.id,
+          accessToken,
+          email: user.email,
+          role: user.role,
+          firstName: user.firstName,
+          lastName: user.lastName
+        },
       },
       { status: 200 }
     );
