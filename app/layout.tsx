@@ -46,6 +46,8 @@ export default function RootLayout({
         {/* Silently re-hydrates the user on hard reload if previously authed */}
         {/* <AuthInitializer /> */}
 
+        {/* Silently re-hydrates the user on hard reload if previously authed */}
+        {/* <AuthInitializer /> */}
         <Nav />
         <main className="pt-[68px] min-h-[calc(80vh)]">{children}</main>
         <Footer />
