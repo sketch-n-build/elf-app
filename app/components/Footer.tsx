@@ -18,7 +18,7 @@ export default function Footer({ minimal = false }: FooterProps) {
               © 2025 Eleje Legacy. All rights reserved.
             </p>
             <p className="text-[0.68rem]" style={{ color: "rgba(250,246,239,0.2)" }}>
-              Registered NGO · Ebonyi State, Nigeria
+              304 Lakeview Avenue, Clifton, NJ 07011
             </p>
           </div>
         </div>
