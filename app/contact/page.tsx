@@ -7,17 +7,35 @@ const contactInfo = [
   {
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-        <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="var(--glow)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="var(--glow)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path
+          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+          stroke="var(--glow)"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+          stroke="var(--glow)"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     ),
     label: "Our Office",
-    value: "12 Oguta Road, Onitsha\nAnambra State, Nigeria",
+    value: "12 Oguta Road, Ebonyi\nEbonyi State, Nigeria",
   },
   {
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="var(--glow)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path
+          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          stroke="var(--glow)"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     ),
     label: "Email Us",
@@ -26,7 +44,13 @@ const contactInfo = [
   {
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-        <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke="var(--glow)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path
+          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+          stroke="var(--glow)"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     ),
     label: "Call Us",
@@ -35,8 +59,14 @@ const contactInfo = [
   {
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="var(--glow)" strokeWidth="1.5"/>
-        <path d="M12 6v6l4 2" stroke="var(--glow)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="12" cy="12" r="10" stroke="var(--glow)" strokeWidth="1.5" />
+        <path
+          d="M12 6v6l4 2"
+          stroke="var(--glow)"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     ),
     label: "Office Hours",
@@ -71,14 +101,16 @@ export default function ContactPage() {
         title={
           <>
             We&apos;d love to{" "}
-            <em style={{ fontStyle: "italic", color: "var(--glow)" }}>hear from you.</em>
+            <em style={{ fontStyle: "italic", color: "var(--glow)" }}>
+              hear from you.
+            </em>
           </>
         }
         minHeight="38vh"
       />
 
       {/* ── Main grid ────────────────────────────────────── */}
-      <div className="section-wrap py-18 pb-24" style={{padding: "50px 0"}}>
+      <div className="section-wrap py-18 pb-24" style={{ padding: "50px 0" }}>
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-14 items-start">
           {/* Form column */}
           <ContactForm />
@@ -126,7 +158,11 @@ export default function ContactPage() {
                       {c.value.split("\n").map((line, i) => (
                         <div
                           key={i}
-                          style={{ fontSize: "0.84rem", lineHeight: 1.65, color: "var(--grey)" }}
+                          style={{
+                            fontSize: "0.84rem",
+                            lineHeight: 1.65,
+                            color: "var(--grey)",
+                          }}
                         >
                           {line}
                         </div>
@@ -142,7 +178,8 @@ export default function ContactPage() {
               className="rounded-[16px] overflow-hidden relative"
               style={{
                 height: 220,
-                background: "linear-gradient(140deg, var(--deep) 0%, var(--emerald) 100%)",
+                background:
+                  "linear-gradient(140deg, var(--deep) 0%, var(--emerald) 100%)",
                 border: "1px solid var(--border)",
               }}
             >
@@ -165,8 +202,20 @@ export default function ContactPage() {
                   }}
                 >
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="var(--pale)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="var(--pale)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      stroke="var(--pale)"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      stroke="var(--pale)"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </div>
                 <div className="text-center">
@@ -178,9 +227,15 @@ export default function ContactPage() {
                       color: "var(--cream)",
                     }}
                   >
-                    Onitsha, Anambra State
+                    Ebonyi, Ebonyi State
                   </p>
-                  <p style={{ fontSize: "0.68rem", color: "rgba(250,246,239,0.5)", marginTop: 3 }}>
+                  <p
+                    style={{
+                      fontSize: "0.68rem",
+                      color: "rgba(250,246,239,0.5)",
+                      marginTop: 3,
+                    }}
+                  >
                     12 Oguta Road, Nigeria
                   </p>
                 </div>
@@ -202,10 +257,10 @@ export default function ContactPage() {
               </p>
               <div className="flex gap-3">
                 {[
-                  { label: "Facebook",  short: "FB" },
-                  { label: "Twitter/X", short: "X"  },
+                  { label: "Facebook", short: "FB" },
+                  { label: "Twitter/X", short: "X" },
                   { label: "Instagram", short: "IG" },
-                  { label: "LinkedIn",  short: "in" },
+                  { label: "LinkedIn", short: "in" },
                 ].map((s) => (
                   <button
                     key={s.label}
@@ -238,7 +293,13 @@ export default function ContactPage() {
       </div>
 
       {/* ── FAQ ──────────────────────────────────────────── */}
-      <section style={{ background: "var(--warm)", borderTop: "1px solid var(--border)", padding: "50px 0" }}>
+      <section
+        style={{
+          background: "var(--warm)",
+          borderTop: "1px solid var(--border)",
+          padding: "50px 0",
+        }}
+      >
         <div className="section-wrap py-[80px]">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-[68px]">
             {/* Left label */}
@@ -256,7 +317,10 @@ export default function ContactPage() {
                   color: "var(--deep)",
                 }}
               >
-                Common <em style={{ fontStyle: "italic", color: "var(--emerald)" }}>questions</em>
+                Common{" "}
+                <em style={{ fontStyle: "italic", color: "var(--emerald)" }}>
+                  questions
+                </em>
               </h2>
               <p
                 className="mt-4"
@@ -267,7 +331,8 @@ export default function ContactPage() {
                   color: "var(--grey)",
                 }}
               >
-                Can&apos;t find what you&apos;re looking for? Use the contact form above.
+                Can&apos;t find what you&apos;re looking for? Use the contact
+                form above.
               </p>
             </div>
 
@@ -284,8 +349,8 @@ export default function ContactPage() {
                       i % 3 === 0
                         ? "var(--mid)"
                         : i % 3 === 1
-                        ? "var(--gold)"
-                        : "var(--deep)"
+                          ? "var(--gold)"
+                          : "var(--deep)"
                     }`,
                   }}
                 >
@@ -321,7 +386,8 @@ export default function ContactPage() {
       <div
         className="py-[72px] text-center relative overflow-hidden"
         style={{
-          background: "linear-gradient(140deg, var(--deep) 0%, var(--emerald) 100%)",
+          background:
+            "linear-gradient(140deg, var(--deep) 0%, var(--emerald) 100%)",
         }}
       >
         <div
@@ -331,7 +397,8 @@ export default function ContactPage() {
             right: -80,
             width: 380,
             height: 380,
-            background: "radial-gradient(circle, rgba(52,211,153,0.09) 0%, transparent 65%)",
+            background:
+              "radial-gradient(circle, rgba(52,211,153,0.09) 0%, transparent 65%)",
           }}
         />
         <div className="section-wrap relative z-10">
@@ -357,7 +424,9 @@ export default function ContactPage() {
             }}
           >
             Every naira plants a{" "}
-            <em style={{ fontStyle: "italic", color: "var(--gold-lt)" }}>seed of legacy</em>
+            <em style={{ fontStyle: "italic", color: "var(--gold-lt)" }}>
+              seed of legacy
+            </em>
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

@@ -3,17 +3,17 @@
 import { useState } from "react";
 
 const amounts = [
-  { value: "₦2,500",  label: "1 nutrition pack" },
-  { value: "₦5,000",  label: "Feed a child/month" },
+  { value: "₦2,500", label: "1 nutrition pack" },
+  { value: "₦5,000", label: "Feed a child/month" },
   { value: "₦10,000", label: "Health visit + meds" },
   { value: "₦20,000", label: "Annual health cover" },
   { value: "₦50,000", label: "Term scholarship" },
-  { value: "Other",   label: "Choose your own" },
+  { value: "Other", label: "Choose your own" },
 ];
 
 export default function DonateForm() {
   const [selected, setSelected] = useState(1);
-  const [done, setDone]         = useState(false);
+  const [done, setDone] = useState(false);
 
   const btnLabel = done
     ? "✓ Thank you! Your donation makes a difference."
@@ -63,7 +63,12 @@ export default function DonateForm() {
       <div className="mb-[14px]">
         <label
           className="block mb-[6px]"
-          style={{ fontSize: "0.65rem", letterSpacing: "0.17em", textTransform: "uppercase", color: "var(--emerald)" }}
+          style={{
+            fontSize: "0.65rem",
+            letterSpacing: "0.17em",
+            textTransform: "uppercase",
+            color: "var(--emerald)",
+          }}
         >
           Full Name
         </label>
@@ -77,15 +82,24 @@ export default function DonateForm() {
             color: "var(--ink)",
             fontFamily: "var(--font-jost), sans-serif",
           }}
-          onFocus={(e) => ((e.target as HTMLInputElement).style.borderColor = "var(--mid)")}
-          onBlur={(e)  => ((e.target as HTMLInputElement).style.borderColor = "var(--border)")}
+          onFocus={(e) =>
+            ((e.target as HTMLInputElement).style.borderColor = "var(--mid)")
+          }
+          onBlur={(e) =>
+            ((e.target as HTMLInputElement).style.borderColor = "var(--border)")
+          }
         />
       </div>
 
       <div className="mb-[14px]">
         <label
           className="block mb-[6px]"
-          style={{ fontSize: "0.65rem", letterSpacing: "0.17em", textTransform: "uppercase", color: "var(--emerald)" }}
+          style={{
+            fontSize: "0.65rem",
+            letterSpacing: "0.17em",
+            textTransform: "uppercase",
+            color: "var(--emerald)",
+          }}
         >
           Email Address
         </label>
@@ -99,8 +113,12 @@ export default function DonateForm() {
             color: "var(--ink)",
             fontFamily: "var(--font-jost), sans-serif",
           }}
-          onFocus={(e) => ((e.target as HTMLInputElement).style.borderColor = "var(--mid)")}
-          onBlur={(e)  => ((e.target as HTMLInputElement).style.borderColor = "var(--border)")}
+          onFocus={(e) =>
+            ((e.target as HTMLInputElement).style.borderColor = "var(--mid)")
+          }
+          onBlur={(e) =>
+            ((e.target as HTMLInputElement).style.borderColor = "var(--border)")
+          }
         />
       </div>
 
@@ -108,7 +126,12 @@ export default function DonateForm() {
         <div>
           <label
             className="block mb-[6px]"
-            style={{ fontSize: "0.65rem", letterSpacing: "0.17em", textTransform: "uppercase", color: "var(--emerald)" }}
+            style={{
+              fontSize: "0.65rem",
+              letterSpacing: "0.17em",
+              textTransform: "uppercase",
+              color: "var(--emerald)",
+            }}
           >
             Phone
           </label>
@@ -122,20 +145,30 @@ export default function DonateForm() {
               color: "var(--ink)",
               fontFamily: "var(--font-jost), sans-serif",
             }}
-            onFocus={(e) => ((e.target as HTMLInputElement).style.borderColor = "var(--mid)")}
-            onBlur={(e)  => ((e.target as HTMLInputElement).style.borderColor = "var(--border)")}
+            onFocus={(e) =>
+              ((e.target as HTMLInputElement).style.borderColor = "var(--mid)")
+            }
+            onBlur={(e) =>
+              ((e.target as HTMLInputElement).style.borderColor =
+                "var(--border)")
+            }
           />
         </div>
         <div>
           <label
             className="block mb-[6px]"
-            style={{ fontSize: "0.65rem", letterSpacing: "0.17em", textTransform: "uppercase", color: "var(--emerald)" }}
+            style={{
+              fontSize: "0.65rem",
+              letterSpacing: "0.17em",
+              textTransform: "uppercase",
+              color: "var(--emerald)",
+            }}
           >
             State
           </label>
           <input
             type="text"
-            placeholder="Anambra"
+            placeholder="Ebonyi"
             className="w-full px-[15px] py-3 rounded-[7px] text-[0.88rem] outline-none transition-colors duration-200"
             style={{
               border: "1px solid var(--border)",
@@ -143,8 +176,13 @@ export default function DonateForm() {
               color: "var(--ink)",
               fontFamily: "var(--font-jost), sans-serif",
             }}
-            onFocus={(e) => ((e.target as HTMLInputElement).style.borderColor = "var(--mid)")}
-            onBlur={(e)  => ((e.target as HTMLInputElement).style.borderColor = "var(--border)")}
+            onFocus={(e) =>
+              ((e.target as HTMLInputElement).style.borderColor = "var(--mid)")
+            }
+            onBlur={(e) =>
+              ((e.target as HTMLInputElement).style.borderColor =
+                "var(--border)")
+            }
           />
         </div>
       </div>
@@ -152,7 +190,12 @@ export default function DonateForm() {
       <div className="mb-5">
         <label
           className="block mb-[6px]"
-          style={{ fontSize: "0.65rem", letterSpacing: "0.17em", textTransform: "uppercase", color: "var(--emerald)" }}
+          style={{
+            fontSize: "0.65rem",
+            letterSpacing: "0.17em",
+            textTransform: "uppercase",
+            color: "var(--emerald)",
+          }}
         >
           Dedication (optional)
         </label>
@@ -166,8 +209,12 @@ export default function DonateForm() {
             color: "var(--ink)",
             fontFamily: "var(--font-jost), sans-serif",
           }}
-          onFocus={(e) => ((e.target as HTMLInputElement).style.borderColor = "var(--mid)")}
-          onBlur={(e)  => ((e.target as HTMLInputElement).style.borderColor = "var(--border)")}
+          onFocus={(e) =>
+            ((e.target as HTMLInputElement).style.borderColor = "var(--mid)")
+          }
+          onBlur={(e) =>
+            ((e.target as HTMLInputElement).style.borderColor = "var(--border)")
+          }
         />
       </div>
 

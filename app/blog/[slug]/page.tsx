@@ -15,16 +15,17 @@ import { formatDate, readingTime } from "@/lib/blog-utils";
      if (!post) notFound();
 ──────────────────────────────────────────────────────────────────────── */
 const MOCK_POSTS: Record<string, BlogPost> = {
-  "community-health-workers-maternal-care-onitsha": {
+  "community-health-workers-maternal-care-Ebonyi": {
     id: "1",
-    title: "How Community Health Workers Are Transforming Maternal Care in Onitsha",
-    slug: "community-health-workers-maternal-care-onitsha",
+    title:
+      "How Community Health Workers Are Transforming Maternal Care in Ebonyi",
+    slug: "community-health-workers-maternal-care-Ebonyi",
     excerpt:
       "Our trained community health workers visit over 200 homes each month, providing care that the formal health system alone cannot reach.",
     content: `
 ## The Challenge
 
-Maternal mortality remains a stubborn reality across Nigeria. In Anambra State, many women still give birth without skilled attendance — not because they don't want care, but because care cannot reach them. Distance, cost, and cultural barriers form a wall too high for many families to climb alone.
+Maternal mortality remains a stubborn reality across Nigeria. In Ebonyi State, many women still give birth without skilled attendance — not because they don't want care, but because care cannot reach them. Distance, cost, and cultural barriers form a wall too high for many families to climb alone.
 
 ## How We Responded
 
@@ -60,30 +61,37 @@ Every mother deserves care. Every community deserves health workers who look lik
     authorId: "u1",
     author: { id: "u1", name: "Amara Okonkwo", email: "amara@eleje.ng" },
     publishedAt: "2026-02-14T10:00:00Z",
-    createdAt:   "2026-02-14T10:00:00Z",
-    updatedAt:   "2026-02-14T10:00:00Z",
+    createdAt: "2026-02-14T10:00:00Z",
+    updatedAt: "2026-02-14T10:00:00Z",
   },
 };
 
 /* Simple markdown-to-JSX renderer (no library dependency) */
 function renderMarkdown(md: string): React.ReactNode[] {
-  const lines  = md.split("\n");
+  const lines = md.split("\n");
   const nodes: React.ReactNode[] = [];
-  let   i      = 0;
+  let i = 0;
 
   const inlineRender = (text: string): React.ReactNode => {
     const parts = text.split(/(\*\*[^*]+\*\*)/g);
     return parts.map((p, j) =>
-      p.startsWith("**") && p.endsWith("**")
-        ? <strong key={j} style={{ color: "var(--deep)", fontWeight: 600 }}>{p.slice(2, -2)}</strong>
-        : p
+      p.startsWith("**") && p.endsWith("**") ? (
+        <strong key={j} style={{ color: "var(--deep)", fontWeight: 600 }}>
+          {p.slice(2, -2)}
+        </strong>
+      ) : (
+        p
+      ),
     );
   };
 
   while (i < lines.length) {
     const line = lines[i].trim();
 
-    if (!line) { i++; continue; }
+    if (!line) {
+      i++;
+      continue;
+    }
 
     if (line.startsWith("## ")) {
       nodes.push(
@@ -100,9 +108,10 @@ function renderMarkdown(md: string): React.ReactNode[] {
           }}
         >
           {line.slice(3)}
-        </h2>
+        </h2>,
       );
-      i++; continue;
+      i++;
+      continue;
     }
 
     if (line.startsWith("> ")) {
@@ -126,9 +135,10 @@ function renderMarkdown(md: string): React.ReactNode[] {
           >
             {line.slice(2)}
           </p>
-        </blockquote>
+        </blockquote>,
       );
-      i++; continue;
+      i++;
+      continue;
     }
 
     if (line.startsWith("- ")) {
@@ -157,7 +167,7 @@ function renderMarkdown(md: string): React.ReactNode[] {
               </span>
             </li>
           ))}
-        </ul>
+        </ul>,
       );
       continue;
     }
@@ -174,7 +184,7 @@ function renderMarkdown(md: string): React.ReactNode[] {
         }}
       >
         {inlineRender(line)}
-      </p>
+      </p>,
     );
     i++;
   }
@@ -185,16 +195,18 @@ function renderMarkdown(md: string): React.ReactNode[] {
 const RELATED = [
   {
     title: "The Legacy Learning Programme: A Year in Numbers",
-    slug:  "legacy-learning-programme-year-in-numbers",
+    slug: "legacy-learning-programme-year-in-numbers",
     excerpt: "340 scholarships, 6 ECD centres, and a 97% retention rate.",
     author: "Chidi Ezenwachi",
     publishedAt: "2026-01-28T09:00:00Z",
     bg: "linear-gradient(140deg,#0D6E4F,#10B981)",
   },
   {
-    title: "Understanding Childhood Malnutrition: What Every Mother Should Know",
-    slug:  "understanding-childhood-malnutrition",
-    excerpt: "Malnutrition remains one of the leading causes of preventable child death in Nigeria.",
+    title:
+      "Understanding Childhood Malnutrition: What Every Mother Should Know",
+    slug: "understanding-childhood-malnutrition",
+    excerpt:
+      "Malnutrition remains one of the leading causes of preventable child death in Nigeria.",
     author: "Ngozi Umezurike",
     publishedAt: "2025-12-20T08:00:00Z",
     bg: "linear-gradient(140deg,#064E38,#0D6E4F)",
@@ -225,7 +237,8 @@ export default async function BlogPostPage({ params }: PageProps) {
     "linear-gradient(135deg,#C9A84C,#8B6914)",
     "linear-gradient(135deg,#148a80,#064E38)",
   ];
-  const authorBg = authorGradients[post.authorId.charCodeAt(1) % authorGradients.length];
+  const authorBg =
+    authorGradients[post.authorId.charCodeAt(1) % authorGradients.length];
 
   return (
     <>
@@ -262,17 +275,31 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         <div className="section-wrap relative z-10" style={{ maxWidth: 800 }}>
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 mb-6" style={{ fontSize: "0.66rem", letterSpacing: "0.18em" }}>
-            <Link href="/blog" style={{ color: "rgba(168,230,216,0.5)", textTransform: "uppercase" }}>
+          <div
+            className="flex items-center gap-2 mb-6"
+            style={{ fontSize: "0.66rem", letterSpacing: "0.18em" }}
+          >
+            <Link
+              href="/blog"
+              style={{
+                color: "rgba(168,230,216,0.5)",
+                textTransform: "uppercase",
+              }}
+            >
               Blog
             </Link>
             <span style={{ color: "rgba(168,230,216,0.25)" }}>›</span>
-            <span style={{ color: "var(--glow)", textTransform: "uppercase" }}>Article</span>
+            <span style={{ color: "var(--glow)", textTransform: "uppercase" }}>
+              Article
+            </span>
           </div>
 
           {/* Category & date */}
           <div className="flex items-center gap-[9px] mb-5">
-            <span className="w-5 h-px flex-shrink-0" style={{ background: "var(--glow)" }} />
+            <span
+              className="w-5 h-px flex-shrink-0"
+              style={{ background: "var(--glow)" }}
+            />
             <span
               style={{
                 fontSize: "0.62rem",
@@ -313,10 +340,24 @@ export default async function BlogPostPage({ params }: PageProps) {
               {authorInitials}
             </div>
             <div>
-              <div style={{ fontSize: "0.85rem", fontWeight: 500, color: "var(--pale)" }}>
+              <div
+                style={{
+                  fontSize: "0.85rem",
+                  fontWeight: 500,
+                  color: "var(--pale)",
+                }}
+              >
                 {post.author.name}
               </div>
-              <div style={{ fontSize: "0.66rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--mgrey)", marginTop: 2 }}>
+              <div
+                style={{
+                  fontSize: "0.66rem",
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                  color: "var(--mgrey)",
+                  marginTop: 2,
+                }}
+              >
                 Eleje Legacy Team
               </div>
             </div>
@@ -326,7 +367,12 @@ export default async function BlogPostPage({ params }: PageProps) {
 
       {/* ── Excerpt pull-quote ────────────────────────────── */}
       {post.excerpt && (
-        <div style={{ background: "var(--warm)", borderBottom: "1px solid var(--border)" }}>
+        <div
+          style={{
+            background: "var(--warm)",
+            borderBottom: "1px solid var(--border)",
+          }}
+        >
           <div className="section-wrap py-8" style={{ maxWidth: 800 }}>
             <p
               style={{
@@ -379,7 +425,12 @@ export default async function BlogPostPage({ params }: PageProps) {
       </article>
 
       {/* ── Related posts ────────────────────────────────── */}
-      <section style={{ background: "var(--warm)", borderTop: "1px solid var(--border)" }}>
+      <section
+        style={{
+          background: "var(--warm)",
+          borderTop: "1px solid var(--border)",
+        }}
+      >
         <div className="section-wrap py-16">
           <div className="eyebrow mb-6">
             <div className="ey-dash" />
@@ -392,9 +443,15 @@ export default async function BlogPostPage({ params }: PageProps) {
                 key={r.slug}
                 href={`/blog/${r.slug}`}
                 className="group block rounded-[16px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                style={{ background: "#fff", border: "1px solid var(--border)" }}
+                style={{
+                  background: "#fff",
+                  border: "1px solid var(--border)",
+                }}
               >
-                <div className="h-[120px] flex items-end p-5" style={{ background: r.bg }}>
+                <div
+                  className="h-[120px] flex items-end p-5"
+                  style={{ background: r.bg }}
+                >
                   <span
                     className="text-[0.52rem] tracking-[0.25em] uppercase px-3 py-[4px] rounded-[2px]"
                     style={{
@@ -421,7 +478,11 @@ export default async function BlogPostPage({ params }: PageProps) {
                   </h4>
                   <p
                     className="mb-4 line-clamp-2"
-                    style={{ fontSize: "0.8rem", lineHeight: 1.7, color: "var(--grey)" }}
+                    style={{
+                      fontSize: "0.8rem",
+                      lineHeight: 1.7,
+                      color: "var(--grey)",
+                    }}
                   >
                     {r.excerpt}
                   </p>
