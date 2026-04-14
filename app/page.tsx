@@ -20,7 +20,8 @@ function HeroSection() {
         style={{
           width: "50%",
           height: "100%",
-          background: "linear-gradient(158deg, var(--deep) 0%, #0b6347 55%, #0e7f5a 100%)",
+          background:
+            "linear-gradient(158deg, var(--deep) 0%, #0b6347 55%, #0e7f5a 100%)",
           clipPath: "polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%, 4% 54%)",
         }}
       />
@@ -32,7 +33,8 @@ function HeroSection() {
           top: "28%",
           width: 360,
           height: 360,
-          background: "radial-gradient(circle, rgba(16,184,129,0.10) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(16,184,129,0.10) 0%, transparent 70%)",
         }}
       />
 
@@ -58,7 +60,7 @@ function HeroSection() {
               color: "var(--glow)",
             }}
           >
-            NGO · Est. 2024 · Onitsha, Nigeria
+            NGO · Est. 2024 · Ebonyi, Nigeria
           </span>
         </div>
 
@@ -73,9 +75,13 @@ function HeroSection() {
             color: "var(--cream)",
           }}
         >
-          Nurturing<br />
+          Nurturing
+          <br />
           <em style={{ fontStyle: "italic", color: "var(--glow)" }}>Growth.</em>
-          <br />Sustaining<br />Legacies.
+          <br />
+          Sustaining
+          <br />
+          Legacies.
         </h1>
 
         <p
@@ -87,7 +93,8 @@ function HeroSection() {
             color: "rgba(250,246,239,0.54)",
           }}
         >
-          Eleje Legacy empowers mothers, protects children, and builds communities that thrive — not just today, but across generations.
+          Eleje Legacy empowers mothers, protects children, and builds
+          communities that thrive — not just today, but across generations.
         </p>
 
         {/* Actions */}
@@ -120,7 +127,7 @@ function HeroSection() {
           {[
             { n: "1,200+", l: "Mothers Supported" },
             { n: "3,400+", l: "Children Reached" },
-            { n: "18+",    l: "Communities" },
+            { n: "18+", l: "Communities" },
           ].map((s) => (
             <div key={s.l}>
               <div
@@ -164,18 +171,24 @@ function HeroSection() {
           >
             <defs>
               <linearGradient id="ga" x1="0%" y1="0%" x2="80%" y2="100%">
-                <stop offset="0%"   stopColor="#34D399" />
+                <stop offset="0%" stopColor="#34D399" />
                 <stop offset="100%" stopColor="#064E38" />
               </linearGradient>
               <linearGradient id="gc" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%"   stopColor="#A8E6D8" />
+                <stop offset="0%" stopColor="#A8E6D8" />
                 <stop offset="100%" stopColor="#10B981" />
               </linearGradient>
             </defs>
             <circle cx="118" cy="30" r="26" fill="url(#ga)" />
-            <path d="M96 52C118 58 140 78 145 106C154 140 140 182 112 200C96 210 76 210 62 200C48 190 40 172 40 154C56 164 76 165 90 152C108 136 110 106 98 78C88 56 70 44 56 40C68 30 82 42 96 52Z" fill="url(#ga)" />
+            <path
+              d="M96 52C118 58 140 78 145 106C154 140 140 182 112 200C96 210 76 210 62 200C48 190 40 172 40 154C56 164 76 165 90 152C108 136 110 106 98 78C88 56 70 44 56 40C68 30 82 42 96 52Z"
+              fill="url(#ga)"
+            />
             <circle cx="64" cy="66" r="18" fill="url(#gc)" />
-            <path d="M46 84C28 100 22 124 28 146C32 164 48 178 66 180C72 160 74 136 76 112C74 94 62 80 46 84Z" fill="url(#gc)" />
+            <path
+              d="M46 84C28 100 22 124 28 146C32 164 48 178 66 180C72 160 74 136 76 112C74 94 62 80 46 84Z"
+              fill="url(#gc)"
+            />
           </svg>
 
           {/* Float cards */}
@@ -189,13 +202,35 @@ function HeroSection() {
               backdropFilter: "blur(10px)",
             }}
           >
-            <div style={{ fontSize: "0.56rem", letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--glow)", marginBottom: 2 }}>
+            <div
+              style={{
+                fontSize: "0.56rem",
+                letterSpacing: "0.28em",
+                textTransform: "uppercase",
+                color: "var(--glow)",
+                marginBottom: 2,
+              }}
+            >
               This Month
             </div>
-            <div style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "1.55rem", fontWeight: 700, color: "var(--pale)", lineHeight: 1 }}>
+            <div
+              style={{
+                fontFamily: "var(--font-cormorant), Georgia, serif",
+                fontSize: "1.55rem",
+                fontWeight: 700,
+                color: "var(--pale)",
+                lineHeight: 1,
+              }}
+            >
               147
             </div>
-            <div style={{ fontSize: "0.6rem", color: "var(--mgrey)", marginTop: 2 }}>
+            <div
+              style={{
+                fontSize: "0.6rem",
+                color: "var(--mgrey)",
+                marginTop: 2,
+              }}
+            >
               New beneficiaries enrolled
             </div>
           </div>
@@ -210,13 +245,35 @@ function HeroSection() {
               backdropFilter: "blur(10px)",
             }}
           >
-            <div style={{ fontSize: "0.56rem", letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--glow)", marginBottom: 2 }}>
+            <div
+              style={{
+                fontSize: "0.56rem",
+                letterSpacing: "0.28em",
+                textTransform: "uppercase",
+                color: "var(--glow)",
+                marginBottom: 2,
+              }}
+            >
               Impact Goal
             </div>
-            <div style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "1.55rem", fontWeight: 700, color: "var(--pale)", lineHeight: 1 }}>
+            <div
+              style={{
+                fontFamily: "var(--font-cormorant), Georgia, serif",
+                fontSize: "1.55rem",
+                fontWeight: 700,
+                color: "var(--pale)",
+                lineHeight: 1,
+              }}
+            >
               ₦2.4M
             </div>
-            <div style={{ fontSize: "0.6rem", color: "var(--mgrey)", marginTop: 2 }}>
+            <div
+              style={{
+                fontSize: "0.6rem",
+                color: "var(--mgrey)",
+                marginTop: 2,
+              }}
+            >
               Raised · 68% of target
             </div>
           </div>
@@ -228,10 +285,26 @@ function HeroSection() {
 
 function ImpactSection() {
   const cards = [
-    { icon: "🤱", n: "1,200+", l: "Mothers supported through ante & postnatal care" },
-    { icon: "👶", n: "3,400+", l: "Children reached through nutrition & education" },
-    { icon: "🌱", n: "18",     l: "Communities across Anambra with active programmes" },
-    { icon: "📚", n: "94%",    l: "Of beneficiaries report improved household wellbeing" },
+    {
+      icon: "🤱",
+      n: "1,200+",
+      l: "Mothers supported through ante & postnatal care",
+    },
+    {
+      icon: "👶",
+      n: "3,400+",
+      l: "Children reached through nutrition & education",
+    },
+    {
+      icon: "🌱",
+      n: "18",
+      l: "Communities across Ebonyi with active programmes",
+    },
+    {
+      icon: "📚",
+      n: "94%",
+      l: "Of beneficiaries report improved household wellbeing",
+    },
   ];
 
   return (
@@ -252,7 +325,9 @@ function ImpactSection() {
           }}
         >
           Every number is a{" "}
-          <em style={{ fontStyle: "italic", color: "var(--emerald)" }}>life transformed</em>
+          <em style={{ fontStyle: "italic", color: "var(--emerald)" }}>
+            life transformed
+          </em>
         </h2>
 
         <div
@@ -279,7 +354,11 @@ function ImpactSection() {
               </div>
               <div
                 className="mt-2"
-                style={{ fontSize: "0.76rem", lineHeight: 1.55, color: "var(--grey)" }}
+                style={{
+                  fontSize: "0.76rem",
+                  lineHeight: 1.55,
+                  color: "var(--grey)",
+                }}
               >
                 {c.l}
               </div>
@@ -334,7 +413,9 @@ function ProgrammesPreview() {
           }}
         >
           Programmes that plant{" "}
-          <em style={{ fontStyle: "italic", color: "var(--emerald)" }}>seeds for tomorrow</em>
+          <em style={{ fontStyle: "italic", color: "var(--emerald)" }}>
+            seeds for tomorrow
+          </em>
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -374,7 +455,11 @@ function ProgrammesPreview() {
                 </h3>
                 <p
                   className="mb-4"
-                  style={{ fontSize: "0.82rem", lineHeight: 1.8, color: "var(--grey)" }}
+                  style={{
+                    fontSize: "0.82rem",
+                    lineHeight: 1.8,
+                    color: "var(--grey)",
+                  }}
                 >
                   {c.desc}
                 </p>
@@ -392,10 +477,18 @@ function ProgrammesPreview() {
 
 function StorySection() {
   const pillars = [
-    { ico: "🌱", ttl: "Growth",    txt: "Long-term development, not short-term relief." },
-    { ico: "🤝", ttl: "Community", txt: "Co-designed with the people we serve." },
-    { ico: "📖", ttl: "Legacy",    txt: "Thinking in generations, not quarters." },
-    { ico: "⚖️", ttl: "Dignity",  txt: "Every person served with honour." },
+    {
+      ico: "🌱",
+      ttl: "Growth",
+      txt: "Long-term development, not short-term relief.",
+    },
+    {
+      ico: "🤝",
+      ttl: "Community",
+      txt: "Co-designed with the people we serve.",
+    },
+    { ico: "📖", ttl: "Legacy", txt: "Thinking in generations, not quarters." },
+    { ico: "⚖️", ttl: "Dignity", txt: "Every person served with honour." },
   ];
 
   return (
@@ -411,20 +504,34 @@ function StorySection() {
               className="w-full rounded-[22px] flex items-center justify-center relative overflow-hidden"
               style={{
                 aspectRatio: "1/1.08",
-                background: "linear-gradient(140deg, var(--deep), var(--emerald))",
+                background:
+                  "linear-gradient(140deg, var(--deep), var(--emerald))",
               }}
             >
               <div
                 className="absolute inset-0"
                 style={{
-                  background: "radial-gradient(ellipse at 35% 35%, rgba(52,211,153,0.13) 0%, transparent 65%)",
+                  background:
+                    "radial-gradient(ellipse at 35% 35%, rgba(52,211,153,0.13) 0%, transparent 65%)",
                 }}
               />
-              <svg width="190" height="220" viewBox="0 0 200 230" fill="none" className="relative z-10">
+              <svg
+                width="190"
+                height="220"
+                viewBox="0 0 200 230"
+                fill="none"
+                className="relative z-10"
+              >
                 <circle cx="118" cy="30" r="26" fill="rgba(168,230,216,0.65)" />
-                <path d="M96 52C118 58 140 78 145 106C154 140 140 182 112 200C96 210 76 210 62 200C48 190 40 172 40 154C56 164 76 165 90 152C108 136 110 106 98 78C88 56 70 44 56 40C68 30 82 42 96 52Z" fill="rgba(168,230,216,0.45)" />
+                <path
+                  d="M96 52C118 58 140 78 145 106C154 140 140 182 112 200C96 210 76 210 62 200C48 190 40 172 40 154C56 164 76 165 90 152C108 136 110 106 98 78C88 56 70 44 56 40C68 30 82 42 96 52Z"
+                  fill="rgba(168,230,216,0.45)"
+                />
                 <circle cx="64" cy="66" r="18" fill="rgba(52,211,153,0.65)" />
-                <path d="M46 84C28 100 22 124 28 146C32 164 48 178 66 180C72 160 74 136 76 112C74 94 62 80 46 84Z" fill="rgba(52,211,153,0.45)" />
+                <path
+                  d="M46 84C28 100 22 124 28 146C32 164 48 178 66 180C72 160 74 136 76 112C74 94 62 80 46 84Z"
+                  fill="rgba(52,211,153,0.45)"
+                />
               </svg>
               {/* Year badge */}
               <div
@@ -442,8 +549,19 @@ function StorySection() {
                 >
                   2024
                 </div>
-                <div style={{ fontSize: "0.48rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--ink)", textAlign: "center", marginTop: 2 }}>
-                  Est.<br />Nigeria
+                <div
+                  style={{
+                    fontSize: "0.48rem",
+                    letterSpacing: "0.15em",
+                    textTransform: "uppercase",
+                    color: "var(--ink)",
+                    textAlign: "center",
+                    marginTop: 2,
+                  }}
+                >
+                  Est.
+                  <br />
+                  Nigeria
                 </div>
               </div>
             </div>
@@ -471,7 +589,13 @@ function StorySection() {
                   >
                     {p.ttl}
                   </div>
-                  <div style={{ fontSize: "0.74rem", lineHeight: 1.6, color: "rgba(250,246,239,0.40)" }}>
+                  <div
+                    style={{
+                      fontSize: "0.74rem",
+                      lineHeight: 1.6,
+                      color: "rgba(250,246,239,0.40)",
+                    }}
+                  >
                     {p.txt}
                   </div>
                 </div>
@@ -483,7 +607,9 @@ function StorySection() {
           <div>
             <div className="eyebrow">
               <div className="ey-dash" style={{ background: "var(--glow)" }} />
-              <span className="ey-txt" style={{ color: "var(--glow)" }}>Our Story</span>
+              <span className="ey-txt" style={{ color: "var(--glow)" }}>
+                Our Story
+              </span>
             </div>
             <h2
               className="mb-4"
@@ -495,8 +621,11 @@ function StorySection() {
                 color: "var(--cream)",
               }}
             >
-              Rooted in purpose,<br />
-              <em style={{ fontStyle: "italic", color: "var(--glow)" }}>built for generations</em>
+              Rooted in purpose,
+              <br />
+              <em style={{ fontStyle: "italic", color: "var(--glow)" }}>
+                built for generations
+              </em>
             </h2>
             <p
               className="mb-7"
@@ -507,7 +636,10 @@ function StorySection() {
                 color: "rgba(250,246,239,0.55)",
               }}
             >
-              Eleje Legacy was born from a simple conviction: that every mother deserves support and every child deserves a future worth inheriting. Founded in Onitsha, we work grassroots — community by community, mother by mother.
+              Eleje Legacy was born from a simple conviction: that every mother
+              deserves support and every child deserves a future worth
+              inheriting. Founded in Ebonyi, we work grassroots — community by
+              community, mother by mother.
             </p>
             <Link
               href="/about"
@@ -532,21 +664,21 @@ function TestimonialsSection() {
     {
       text: "Eleje Legacy gave me more than support — they gave me back my confidence as a mother. My children are healthy and I now have skills to provide for them.",
       name: "Chioma Okafor",
-      loc: "Onitsha South, Anambra",
+      loc: "Ebonyi South, Ebonyi",
       initial: "C",
       bg: "linear-gradient(135deg,#0D6E4F,#34D399)",
     },
     {
       text: "Before the programme, I didn't know how to handle my baby's nutrition. Now I teach other mothers in my community what I've learnt here.",
       name: "Adaeze Eze",
-      loc: "Awka, Anambra",
+      loc: "Awka, Ebonyi",
       initial: "A",
       bg: "linear-gradient(135deg,#C9A84C,#8B6914)",
     },
     {
       text: "My daughter is now in secondary school on a Legacy scholarship. Two years ago that felt impossible. This organisation changed our family's trajectory.",
       name: "Ngozi Umeh",
-      loc: "Nnewi, Anambra",
+      loc: "Nnewi, Ebonyi",
       initial: "N",
       bg: "linear-gradient(135deg,#148a80,#064E38)",
     },
@@ -570,7 +702,10 @@ function TestimonialsSection() {
           }}
         >
           What our{" "}
-          <em style={{ fontStyle: "italic", color: "var(--emerald)" }}>community</em> says
+          <em style={{ fontStyle: "italic", color: "var(--emerald)" }}>
+            community
+          </em>{" "}
+          says
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -618,10 +753,19 @@ function TestimonialsSection() {
                   {t.initial}
                 </div>
                 <div>
-                  <div style={{ fontWeight: 500, fontSize: "0.83rem", color: "var(--deep)" }}>
+                  <div
+                    style={{
+                      fontWeight: 500,
+                      fontSize: "0.83rem",
+                      color: "var(--deep)",
+                    }}
+                  >
                     {t.name}
                   </div>
-                  <div className="mt-[2px]" style={{ fontSize: "0.68rem", color: "var(--mgrey)" }}>
+                  <div
+                    className="mt-[2px]"
+                    style={{ fontSize: "0.68rem", color: "var(--mgrey)" }}
+                  >
                     {t.loc}
                   </div>
                 </div>

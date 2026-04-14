@@ -9,11 +9,11 @@ const programmes = [
     bg: "linear-gradient(160deg,#064E38,#0D6E4F)",
     chipColor: "white",
     title: "Mother & Child Care",
-    desc: "Free ante & postnatal clinic visits, nutritional support packs, breastfeeding counselling, and immunisation tracking for mothers and children under five across 18 communities in Anambra State.",
+    desc: "Free ante & postnatal clinic visits, nutritional support packs, breastfeeding counselling, and immunisation tracking for mothers and children under five across 18 communities in Ebonyi State.",
     metrics: [
       { v: "1,200+", l: "Mothers Enrolled" },
       { v: "2,800+", l: "Children Screened" },
-      { v: "18",     l: "Communities" },
+      { v: "18", l: "Communities" },
     ],
   },
   {
@@ -25,9 +25,9 @@ const programmes = [
     title: "Legacy Learning",
     desc: "Early childhood development centres, daily school feeding, remedial tutoring, and term scholarships ensuring no child drops out due to financial hardship. Supporting 6 ECD centres and 340 scholarship recipients.",
     metrics: [
-      { v: "340",  l: "Scholarships" },
-      { v: "6",    l: "ECD Centres" },
-      { v: "97%",  l: "Retention Rate" },
+      { v: "340", l: "Scholarships" },
+      { v: "6", l: "ECD Centres" },
+      { v: "97%", l: "Retention Rate" },
     ],
   },
   {
@@ -39,8 +39,8 @@ const programmes = [
     title: "Women in Growth",
     desc: "12-week vocational skills training in tailoring, food processing, soap making and digital literacy, combined with cooperative savings groups, micro-loan access, and business mentorship from established women entrepreneurs.",
     metrics: [
-      { v: "380+",  l: "Women Trained" },
-      { v: "24",    l: "Co-op Groups" },
+      { v: "380+", l: "Women Trained" },
+      { v: "24", l: "Co-op Groups" },
       { v: "₦12M+", l: "Loans Disbursed" },
     ],
   },
@@ -53,8 +53,11 @@ export default function ProgrammesPage() {
         label="Our Programmes"
         title={
           <>
-            Planting seeds.<br />
-            <em style={{ fontStyle: "italic", color: "var(--glow)" }}>Harvesting futures.</em>
+            Planting seeds.
+            <br />
+            <em style={{ fontStyle: "italic", color: "var(--glow)" }}>
+              Harvesting futures.
+            </em>
           </>
         }
       />
@@ -76,7 +79,9 @@ export default function ProgrammesPage() {
             }}
           >
             Three pillars,{" "}
-            <em style={{ fontStyle: "italic", color: "var(--emerald)" }}>one mission</em>
+            <em style={{ fontStyle: "italic", color: "var(--emerald)" }}>
+              one mission
+            </em>
           </h2>
 
           {/* Programme cards grid */}
@@ -212,7 +217,8 @@ export default function ProgrammesPage() {
                     margin: "0 auto 16px",
                   }}
                 >
-                  Coming 2025 — Small grants for community-led health, education &amp; livelihood initiatives.
+                  Coming 2025 — Small grants for community-led health, education
+                  &amp; livelihood initiatives.
                 </p>
                 <span
                   className="inline-block px-[15px] py-[7px] rounded-[2px]"

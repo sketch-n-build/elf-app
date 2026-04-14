@@ -18,7 +18,7 @@ export default function Footer({ minimal = false }: FooterProps) {
               © 2025 Eleje Legacy. All rights reserved.
             </p>
             <p className="text-[0.68rem]" style={{ color: "rgba(250,246,239,0.2)" }}>
-              Registered NGO · Anambra State, Nigeria
+              Registered NGO · Ebonyi State, Nigeria
             </p>
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function Footer({ minimal = false }: FooterProps) {
             © 2025 Eleje Legacy. All rights reserved.
           </p>
           <p className="text-[0.68rem]" style={{ color: "rgba(250,246,239,0.2)" }}>
-            Registered NGO · Anambra State, Nigeria
+            Registered NGO · Ebonyi State, Nigeria
           </p>
         </div>
       </div>

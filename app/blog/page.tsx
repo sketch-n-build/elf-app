@@ -17,8 +17,9 @@ import { BlogPost } from "../../lib/types/Blog";
 const mockPosts: BlogPost[] = [
   {
     id: "1",
-    title: "How Community Health Workers Are Transforming Maternal Care in Onitsha",
-    slug: "community-health-workers-maternal-care-onitsha",
+    title:
+      "How Community Health Workers Are Transforming Maternal Care in Ebonyi",
+    slug: "community-health-workers-maternal-care-Ebonyi",
     excerpt:
       "Our trained community health workers visit over 200 homes each month, providing care that the formal health system alone cannot reach.",
     content: "Full content here...",
@@ -27,8 +28,8 @@ const mockPosts: BlogPost[] = [
     authorId: "u1",
     author: { id: "u1", name: "Amara Okonkwo", email: "amara@eleje.ng" },
     publishedAt: "2026-02-14T10:00:00Z",
-    createdAt:   "2026-02-14T10:00:00Z",
-    updatedAt:   "2026-02-14T10:00:00Z",
+    createdAt: "2026-02-14T10:00:00Z",
+    updatedAt: "2026-02-14T10:00:00Z",
   },
   {
     id: "2",
@@ -42,8 +43,8 @@ const mockPosts: BlogPost[] = [
     authorId: "u2",
     author: { id: "u2", name: "Chidi Ezenwachi", email: "chidi@eleje.ng" },
     publishedAt: "2026-01-28T09:00:00Z",
-    createdAt:   "2026-01-28T09:00:00Z",
-    updatedAt:   "2026-01-28T09:00:00Z",
+    createdAt: "2026-01-28T09:00:00Z",
+    updatedAt: "2026-01-28T09:00:00Z",
   },
   {
     id: "3",
@@ -57,12 +58,13 @@ const mockPosts: BlogPost[] = [
     authorId: "u1",
     author: { id: "u1", name: "Amara Okonkwo", email: "amara@eleje.ng" },
     publishedAt: "2026-01-10T11:00:00Z",
-    createdAt:   "2026-01-10T11:00:00Z",
-    updatedAt:   "2026-01-10T11:00:00Z",
+    createdAt: "2026-01-10T11:00:00Z",
+    updatedAt: "2026-01-10T11:00:00Z",
   },
   {
     id: "4",
-    title: "Understanding Childhood Malnutrition: What Every Mother Should Know",
+    title:
+      "Understanding Childhood Malnutrition: What Every Mother Should Know",
     slug: "understanding-childhood-malnutrition",
     excerpt:
       "Malnutrition remains one of the leading causes of preventable child death in Nigeria. We break down the signs, causes, and what to do.",
@@ -72,8 +74,8 @@ const mockPosts: BlogPost[] = [
     authorId: "u3",
     author: { id: "u3", name: "Ngozi Umezurike", email: "ngozi@eleje.ng" },
     publishedAt: "2025-12-20T08:00:00Z",
-    createdAt:   "2025-12-20T08:00:00Z",
-    updatedAt:   "2025-12-20T08:00:00Z",
+    createdAt: "2025-12-20T08:00:00Z",
+    updatedAt: "2025-12-20T08:00:00Z",
   },
   {
     id: "5",
@@ -87,8 +89,8 @@ const mockPosts: BlogPost[] = [
     authorId: "u4",
     author: { id: "u4", name: "Ifeanyi Agu", email: "ifeanyi@eleje.ng" },
     publishedAt: "2025-12-05T14:00:00Z",
-    createdAt:   "2025-12-05T14:00:00Z",
-    updatedAt:   "2025-12-05T14:00:00Z",
+    createdAt: "2025-12-05T14:00:00Z",
+    updatedAt: "2025-12-05T14:00:00Z",
   },
   {
     id: "6",
@@ -102,8 +104,8 @@ const mockPosts: BlogPost[] = [
     authorId: "u1",
     author: { id: "u1", name: "Amara Okonkwo", email: "amara@eleje.ng" },
     publishedAt: "2025-11-30T10:00:00Z",
-    createdAt:   "2025-11-30T10:00:00Z",
-    updatedAt:   "2025-11-30T10:00:00Z",
+    createdAt: "2025-11-30T10:00:00Z",
+    updatedAt: "2025-11-30T10:00:00Z",
   },
   {
     id: "7",
@@ -117,8 +119,8 @@ const mockPosts: BlogPost[] = [
     authorId: "u2",
     author: { id: "u2", name: "Chidi Ezenwachi", email: "chidi@eleje.ng" },
     publishedAt: "2025-11-15T09:00:00Z",
-    createdAt:   "2025-11-15T09:00:00Z",
-    updatedAt:   "2025-11-15T09:00:00Z",
+    createdAt: "2025-11-15T09:00:00Z",
+    updatedAt: "2025-11-15T09:00:00Z",
   },
 ];
 
@@ -133,7 +135,9 @@ export default function BlogPage() {
         title={
           <>
             Words that plant{" "}
-            <em style={{ fontStyle: "italic", color: "var(--glow)" }}>seeds.</em>
+            <em style={{ fontStyle: "italic", color: "var(--glow)" }}>
+              seeds.
+            </em>
           </>
         }
         minHeight="38vh"
@@ -150,7 +154,7 @@ export default function BlogPage() {
           <div className="flex flex-wrap items-center gap-8">
             {[
               { n: `${mockPosts.length}`, l: "Articles Published" },
-              { n: "4",   l: "Authors" },
+              { n: "4", l: "Authors" },
               { n: "2026", l: "Latest Year" },
             ].map((s) => (
               <div key={s.l} className="flex items-center gap-3">
@@ -203,7 +207,8 @@ export default function BlogPage() {
                 <div
                   className="min-h-[260px] lg:min-h-[380px] relative overflow-hidden flex items-end p-8"
                   style={{
-                    background: "linear-gradient(140deg, var(--deep) 0%, var(--emerald) 60%, #34D399 100%)",
+                    background:
+                      "linear-gradient(140deg, var(--deep) 0%, var(--emerald) 60%, #34D399 100%)",
                   }}
                 >
                   {/* Decorative circles */}
@@ -247,8 +252,12 @@ export default function BlogPage() {
                     className="mb-4 text-xs tracking-[0.2em] uppercase"
                     style={{ color: "var(--mid)" }}
                   >
-                    {new Date(featured.publishedAt as string).toLocaleDateString("en-NG", {
-                      year: "numeric", month: "long", day: "numeric",
+                    {new Date(
+                      featured.publishedAt as string,
+                    ).toLocaleDateString("en-NG", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
                     })}
                   </div>
                   <h2
@@ -279,17 +288,34 @@ export default function BlogPage() {
                       <div
                         className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
                         style={{
-                          background: "linear-gradient(135deg, var(--deep), var(--emerald))",
+                          background:
+                            "linear-gradient(135deg, var(--deep), var(--emerald))",
                           fontFamily: "var(--font-cormorant), Georgia, serif",
                         }}
                       >
-                        {featured.author.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+                        {featured.author.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")
+                          .slice(0, 2)}
                       </div>
                       <div>
-                        <div style={{ fontSize: "0.82rem", fontWeight: 500, color: "var(--deep)" }}>
+                        <div
+                          style={{
+                            fontSize: "0.82rem",
+                            fontWeight: 500,
+                            color: "var(--deep)",
+                          }}
+                        >
                           {featured.author.name}
                         </div>
-                        <div style={{ fontSize: "0.66rem", color: "var(--mgrey)", marginTop: 1 }}>
+                        <div
+                          style={{
+                            fontSize: "0.66rem",
+                            color: "var(--mgrey)",
+                            marginTop: 1,
+                          }}
+                        >
                           Eleje Legacy Team
                         </div>
                       </div>

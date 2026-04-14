@@ -9,7 +9,7 @@ const navLinks = [
   { href: "/",           label: "Home" },
   { href: "/about",      label: "About" },
   { href: "/programmes", label: "Programmes" },
-  { href: "/donation",     label: "Donattions" },
+  { href: "/donation",     label: "Donations" },
 ];
 
 export default function Nav() {

@@ -4,73 +4,73 @@ import { EmailTemplate, EmailVariant } from "../types/Email";
 
 /* ─── Brand tokens (inline — email clients strip <style> blocks) ──────── */
 const C = {
-  deep:    "#064E38",
+  deep: "#064E38",
   emerald: "#0D6E4F",
-  mid:     "#10B981",
-  glow:    "#34D399",
-  pale:    "#A8E6D8",
-  gold:    "#C9A84C",
-  goldLt:  "#E8C97A",
-  ink:     "#0C1810",
-  cream:   "#FAF6EF",
-  warm:    "#F0F7F3",
-  warm2:   "#E4F0EB",
-  grey:    "#4A6458",
-  mgrey:   "#8AA899",
-  border:  "#C4DDD5",
+  mid: "#10B981",
+  glow: "#34D399",
+  pale: "#A8E6D8",
+  gold: "#C9A84C",
+  goldLt: "#E8C97A",
+  ink: "#0C1810",
+  cream: "#FAF6EF",
+  warm: "#F0F7F3",
+  warm2: "#E4F0EB",
+  grey: "#4A6458",
+  mgrey: "#8AA899",
+  border: "#C4DDD5",
 };
 
 /* ─── Variant config ──────────────────────────────────────── */
 interface VariantConfig {
-  badge:      string;
+  badge: string;
   accentLine: string; // gradient for the bottom accent bar of header
-  ctaBg:      string;
-  ctaColor:   string;
+  ctaBg: string;
+  ctaColor: string;
 }
 
 function getVariantConfig(variant: EmailVariant = "default"): VariantConfig {
   const configs: Record<EmailVariant, VariantConfig> = {
     default: {
-      badge:      "Notification",
+      badge: "Notification",
       accentLine: `linear-gradient(90deg, ${C.emerald}, ${C.glow})`,
-      ctaBg:      C.deep,
-      ctaColor:   C.cream,
+      ctaBg: C.deep,
+      ctaColor: C.cream,
     },
     welcome: {
-      badge:      "Welcome",
+      badge: "Welcome",
       accentLine: `linear-gradient(90deg, ${C.mid}, ${C.glow})`,
-      ctaBg:      C.gold,
-      ctaColor:   C.ink,
+      ctaBg: C.gold,
+      ctaColor: C.ink,
     },
     verification: {
-      badge:      "Verify Email",
+      badge: "Verify Email",
       accentLine: `linear-gradient(90deg, ${C.emerald}, ${C.glow})`,
-      ctaBg:      C.emerald,
-      ctaColor:   "#ffffff",
+      ctaBg: C.emerald,
+      ctaColor: "#ffffff",
     },
     reset: {
-      badge:      "Password Reset",
+      badge: "Password Reset",
       accentLine: `linear-gradient(90deg, ${C.deep}, ${C.emerald})`,
-      ctaBg:      C.deep,
-      ctaColor:   C.cream,
+      ctaBg: C.deep,
+      ctaColor: C.cream,
     },
     donation: {
-      badge:      "Donation Received",
+      badge: "Donation Received",
       accentLine: `linear-gradient(90deg, ${C.gold}, ${C.goldLt})`,
-      ctaBg:      C.gold,
-      ctaColor:   C.ink,
+      ctaBg: C.gold,
+      ctaColor: C.ink,
     },
     project: {
-      badge:      "Project Update",
+      badge: "Project Update",
       accentLine: `linear-gradient(90deg, ${C.deep}, ${C.mid})`,
-      ctaBg:      C.deep,
-      ctaColor:   C.cream,
+      ctaBg: C.deep,
+      ctaColor: C.cream,
     },
     alert: {
-      badge:      "Alert",
+      badge: "Alert",
       accentLine: `linear-gradient(90deg, #7C3A1A, #C9A84C)`,
-      ctaBg:      "#7C3A1A",
-      ctaColor:   "#ffffff",
+      ctaBg: "#7C3A1A",
+      ctaColor: "#ffffff",
     },
   };
   return configs[variant] ?? configs.default;
@@ -101,12 +101,13 @@ export function createEmailTemplate({
   senderEmail,
   metaLine,
 }: EmailTemplate): string {
-
-  const vc          = getVariantConfig(variant);
+  const vc = getVariantConfig(variant);
   const displayName = firstName || "there";
-  const hasSender   = senderEmail || senderFirstName || senderLastName;
-  const senderName  = [senderFirstName, senderLastName].filter(Boolean).join(" ");
-  const year        = new Date().getFullYear();
+  const hasSender = senderEmail || senderFirstName || senderLastName;
+  const senderName = [senderFirstName, senderLastName]
+    .filter(Boolean)
+    .join(" ");
+  const year = new Date().getFullYear();
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -212,7 +213,9 @@ export function createEmailTemplate({
         </tr>
 
         <!-- ── SENDER INFO (conditional) ──────────────────── -->
-        ${hasSender ? `
+        ${
+          hasSender
+            ? `
         <tr>
           <td style="
             padding:16px 44px;
@@ -260,7 +263,9 @@ export function createEmailTemplate({
             </table>
           </td>
         </tr>
-        ` : ""}
+        `
+            : ""
+        }
 
         <!-- ── GREETING ────────────────────────────────────── -->
         <tr>
@@ -287,7 +292,9 @@ export function createEmailTemplate({
         </tr>
 
         <!-- ── MAIN MESSAGE ────────────────────────────────── -->
-        ${message ? `
+        ${
+          message
+            ? `
         <tr>
           <td style="padding:20px 44px 32px;">
             <div style="
@@ -300,10 +307,14 @@ export function createEmailTemplate({
             </div>
           </td>
         </tr>
-        ` : ""}
+        `
+            : ""
+        }
 
         <!-- ── META LINE (optional detail) ─────────────────── -->
-        ${metaLine ? `
+        ${
+          metaLine
+            ? `
         <tr>
           <td style="padding:0 44px 28px;">
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -321,10 +332,14 @@ export function createEmailTemplate({
             </table>
           </td>
         </tr>
-        ` : ""}
+        `
+            : ""
+        }
 
         <!-- ── CTA BUTTON ──────────────────────────────────── -->
-        ${linkUrl ? `
+        ${
+          linkUrl
+            ? `
         <tr>
           <td style="
             padding:8px 44px 36px;
@@ -362,7 +377,9 @@ export function createEmailTemplate({
             ">Or copy this link: <span style="color:${C.emerald};">${linkUrl}</span></p>
           </td>
         </tr>
-        ` : ""}
+        `
+            : ""
+        }
 
         <!-- ── SIGNATURE ───────────────────────────────────── -->
         <tr>
@@ -386,7 +403,7 @@ export function createEmailTemplate({
               letter-spacing:0.22em;
               text-transform:uppercase;
               color:${C.mgrey};
-            ">Onitsha, Anambra · Nigeria</p>
+            ">Ebonyi, Ebonyi · Nigeria</p>
           </td>
         </tr>
 
@@ -412,7 +429,9 @@ export function createEmailTemplate({
                   <!-- Footer links row -->
                   <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom:14px;">
                     <tr>
-                      ${["About", "Programmes", "Donate", "Contact"].map((label, i) => `
+                      ${["About", "Programmes", "Donate", "Contact"]
+                        .map(
+                          (label, i) => `
                       <td style="padding-right:${i < 3 ? "18px" : "0"};">
                         <a href="#" style="
                           font-size:10px;
@@ -421,7 +440,9 @@ export function createEmailTemplate({
                           color:rgba(168,230,216,0.4);
                           text-decoration:none;
                         ">${label}</a>
-                      </td>`).join("")}
+                      </td>`,
+                        )
+                        .join("")}
                     </tr>
                   </table>
 
@@ -432,7 +453,7 @@ export function createEmailTemplate({
                     color:rgba(250,246,239,0.22);
                     line-height:1.7;
                   ">© ${year} Eleje Legacy. All rights reserved.<br>
-                  Registered NGO · Anambra State, Nigeria</p>
+                  Registered NGO · Ebonyi State, Nigeria</p>
 
                   <!-- Unsubscribe -->
                   <p style="
