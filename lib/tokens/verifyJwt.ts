@@ -32,9 +32,9 @@ export function verifyJwt(token: string, secret: string): ElejeJwtPayload {
       throw new Error("Token is missing subject claim.");
     }
 
-    if (!decoded.isActive) {
-      throw new Error("This account has been deactivated. Please contact support.");
-    }
+    // if (!decoded.isActive) {
+    //   throw new Error("This account has been deactivated. Please contact support.");
+    // }
 
     return decoded;
 

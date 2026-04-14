@@ -36,6 +36,8 @@ export function generateJwtToken(
     isActive?:       boolean;
     sessionId?:     string;
     emailVerified?: boolean;
+    firstName?: string;
+    lastName?: string;
   }
 ): string {
 

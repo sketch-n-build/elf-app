@@ -277,7 +277,7 @@ function SuccessState() {
       {/* CTA strip */}
       <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
         <Link
-          href="/login"
+          href="/auth/login"
           style={{
             display: "inline-flex",
             alignItems: "center",
@@ -341,7 +341,7 @@ function AlreadyVerifiedState() {
         Your email address has already been confirmed. You can log straight in.
       </p>
       <Link
-        href="/login"
+        href="/auth/login"
         style={{
           display: "inline-flex",
           alignItems: "center",
@@ -385,7 +385,7 @@ function ErrorState({ message, userId }: { message: string; userId: string }) {
 
       <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
         <Link
-          href="/login"
+          href="/auth/login"
           style={{
             display: "inline-flex",
             alignItems: "center",

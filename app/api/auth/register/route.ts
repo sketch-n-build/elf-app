@@ -53,7 +53,7 @@ export const POST = async (request: NextRequest) => {
         //    protected admin-only endpoint. Change to INVESTOR or whichever
         //    role your public sign-up flow targets.
         role: UserRole.INVESTOR,
-        isActive: false,
+        isActive: true,
       },
     });
 
@@ -67,7 +67,7 @@ export const POST = async (request: NextRequest) => {
     //    so it expects a hash here.
     const hashedToken = await bcrypt.hash(token, 10);
 
-    const verificationUrl = `${process.env.WEB_BASE_URL}/verify-email?userId=${user.id}&token=${token}`;
+    const verificationUrl = `${process.env.WEB_BASE_URL}/auth/verify-email?userId=${user.id}&token=${token}`;
 
     await prisma.verificationToken.create({
       data: {

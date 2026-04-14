@@ -16,7 +16,10 @@ export const POST = async (req: NextRequest) => {
     // ─── 1. Pull raw token from cookie ───────────────────────────────────
     const rawToken = req.cookies.get("refreshToken")?.value;
 
+    console.log("Raw refresh Token", rawToken)
+
     if (!rawToken) {
+      console.log("No raw token")
       return NextResponse.json(
         { success: false, message: "No refresh token provided" },
         { status: 401 }
@@ -24,21 +27,27 @@ export const POST = async (req: NextRequest) => {
     }
 
     // ─── 2. Verify JWT signature + expiry ────────────────────────────────
+    console.log("Start verifying jwt")
     const secret = process.env.JWT_SECRET;
     if (!secret) throw new Error("Missing required environment variable: JWT_SECRET");
-
+    
     let payload: { sub: string; email: string; role: string };
     try {
+      console.log("Verification in action")
       payload = verifyJwt(rawToken, secret) as typeof payload;
-    } catch {
+      console.log("Should get payload")
+      console.log("Token payload from refresh", payload)
+    } catch (error: any){
       // JWT is expired or tampered — clear the cookie
+      console.error("JWT verification failed:", error.message);  // ← shows real reason
       const res = NextResponse.json(
-        { success: false, message: "Invalid or expired refresh token" },
+        { success: false, message: error.message ?? "Invalid or expired refresh token" },
         { status: 401 }
       );
       res.cookies.set({ ...COOKIE_OPTIONS, name: "refreshToken", value: "", maxAge: 0, expires: new Date(0) });
       return res;
     }
+
 
     const userId = payload.sub;
     if (!userId) {
@@ -92,7 +101,7 @@ export const POST = async (req: NextRequest) => {
     // ─── 6. Fetch the user to ensure the account is still valid ─────────
     const user = await prisma.user.findUnique({
       where: { id: userId },
-      select: { id: true, email: true, role: true, isActive: true, emailVerified: true },
+      select: { id: true, email: true, role: true, isActive: true, emailVerified: true, firstName: true, lastName: true },
     });
 
     if (!user || !user.emailVerified) {
@@ -109,6 +118,9 @@ export const POST = async (req: NextRequest) => {
     const newAccessToken = generateJwtToken(user.id, secret, "15m", {
       email: user.email,
       role: user.role,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      
     });
 
     // ─── 8. Rotate the refresh token ─────────────────────────────────────
@@ -138,7 +150,7 @@ export const POST = async (req: NextRequest) => {
       {
         success: true,
         message: "Token refreshed",
-        data: { accessToken: newAccessToken },
+        data: { id: user.id, accessToken: newAccessToken, email: user.email, firstName: user.firstName, lastName: user.lastName, role: user.role },
       },
       { status: 200 }
     );
