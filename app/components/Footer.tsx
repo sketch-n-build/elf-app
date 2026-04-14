@@ -36,7 +36,7 @@ export default function Footer({ minimal = false }: FooterProps) {
         >
           {/* Brand col */}
           <div>
-            <ElojeLogo width={38} height={44} />
+            <ElojeLogo width={100} height={85} />
             <p
               className="mt-4 mb-[22px] max-w-[260px] leading-[1.8] text-[0.88rem]"
               style={{
