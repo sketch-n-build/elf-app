@@ -13,7 +13,7 @@ export const POST = async (request: NextRequest) => {
     if (!email || !password || !firstName || !lastName) {
       return NextResponse.json(
         { success: false, message: "All fields are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -24,7 +24,7 @@ export const POST = async (request: NextRequest) => {
           message:
             "Password must contain letters, numbers and be at least 6 characters",
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -36,7 +36,7 @@ export const POST = async (request: NextRequest) => {
     if (existingUser) {
       return NextResponse.json(
         { success: false, message: "Email already registered" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -52,13 +52,14 @@ export const POST = async (request: NextRequest) => {
         //    Admins should be seeded directly in the DB or created via a
         //    protected admin-only endpoint. Change to INVESTOR or whichever
         //    role your public sign-up flow targets.
-        role: UserRole.INVESTOR,
+        role: UserRole.STAFF,
         isActive: true,
       },
     });
 
     const secret = process.env.JWT_SECRET;
-    if (!secret) throw new Error("Missing required environment variable: JWT_SECRET");
+    if (!secret)
+      throw new Error("Missing required environment variable: JWT_SECRET");
 
     const token = generateJwtToken(user.id, secret, "1h");
 
@@ -85,19 +86,23 @@ export const POST = async (request: NextRequest) => {
       await prisma.user.delete({ where: { id: user.id } });
       return NextResponse.json(
         { success: false, message: "Error sending verification email" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
     return NextResponse.json(
-      { success: true, message: "Registration successful. Please check your email to verify your account." },
-      { status: 201 }
+      {
+        success: true,
+        message:
+          "Registration successful. Please check your email to verify your account.",
+      },
+      { status: 201 },
     );
   } catch (error) {
     console.error("REGISTER ERROR:", error);
     return NextResponse.json(
       { success: false, message: "Registration failed" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 };
