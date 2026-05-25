@@ -224,8 +224,8 @@ export default function DashboardLayout({ children }: Props) {
       </aside>
 
       {/* ── Main area ── */}
-      <div style={{ flex: 1, display: "flex", flexDirection: "column",
-        minWidth: 0, marginLeft: open ? 0 : 240, }} className="lg:ml-[240px]">
+      <div className='ml-0 lg:ml-[240px]' style={{ flex: 1, display: "flex", flexDirection: "column",
+        minWidth: 0,  }} >
 
         {/* Top bar */}
         <header style={{
@@ -281,7 +281,7 @@ export default function DashboardLayout({ children }: Props) {
         </header>
 
         {/* Page content */}
-        <main style={{ flex: 1, padding: "28px 24px 48px", maxWidth: 1200, width: "100%" }}>
+        <main  style={{ flex: 1, padding: "28px 24px 48px", maxWidth: 1200, width: "100%" }}>
           {children}
         </main>
       </div>
