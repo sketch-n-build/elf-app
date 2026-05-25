@@ -21,7 +21,7 @@ export default function Nav() {
       <nav
         className="fixed top-0 left-0 right-0 z-[200] h-[68px] flex items-center justify-between px-5 md:px-[52px]"
         style={{
-          background: "rgba(12,24,16,0.94)",
+          background: "#A1887F",
           backdropFilter: "blur(18px)",
           borderBottom: "1px solid rgba(52,211,153,0.09)",
         }}
