@@ -9,7 +9,12 @@ const navLinks = [
   { href: "/",           label: "Home" },
   { href: "/about",      label: "About" },
   { href: "/programmes", label: "Programmes" },
-  { href: "/donation",     label: "Donations" },
+  { 
+    href: "https://app.autobooks.co/pay/eleje-legacy", // Or a different internal page route
+    label: "Donations", 
+    target: "_blank", 
+    rel: "noopener noreferrer" 
+  },
 ];
 
 export default function Nav() {
@@ -21,7 +26,7 @@ export default function Nav() {
       <nav
         className="fixed top-0 left-0 right-0 z-[200] h-[68px] flex items-center justify-between px-5 md:px-[52px]"
         style={{
-          background: "#A1887F",
+          background: "#3e2723",
           backdropFilter: "blur(18px)",
           borderBottom: "1px solid rgba(52,211,153,0.09)",
         }}
