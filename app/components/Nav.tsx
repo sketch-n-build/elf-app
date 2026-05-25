@@ -134,7 +134,7 @@ export default function Nav() {
           </ul>
           <div className="flex gap-3 px-5 pb-5 pt-2">
             <Link
-              href="/auth"
+              href="/auth/login"
               onClick={() => setOpen(false)}
               className="flex-1 text-center py-2 rounded text-xs tracking-[0.15em] uppercase"
               style={{
@@ -145,7 +145,7 @@ export default function Nav() {
               Log In
             </Link>
             <Link
-              href="/auth?tab=signup"
+              href="/auth/signup"
               onClick={() => setOpen(false)}
               className="flex-1 text-center py-2 rounded text-xs font-semibold tracking-[0.15em] uppercase"
               style={{ background: "var(--gold)", color: "var(--ink)" }}
