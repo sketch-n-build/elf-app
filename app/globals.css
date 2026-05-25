@@ -76,7 +76,7 @@
 /* ────────────────────────────────────────────
    BRAND CSS VARIABLES
 ──────────────────────────────────────────── */
-:root {
+/* :root {
   --deep:    #064E38;
   --emerald: #0D6E4F;
   --mid:     #10B981;
@@ -92,6 +92,31 @@
   --mgrey:   #8AA899;
   --border:  #C4DDD5;
   --shadow:  rgba(6, 78, 56, 0.10);
+} */
+
+:root {
+  /* Brand Browns and Coppers */
+  --deep:     #3E2723; /* Deep, rich chocolate brown */
+  --emerald:  #6D4C41; /* Primary brand brown (mid-brown) */
+  --mid:      #8D6E63; /* Medium warm taupe */
+  --glow:     #A1887F; /* Warm terracotta glow */
+  --pale:     #BCAAA4; /* Pale, soft beige-brown */
+
+  /* Gold Accents (Retained and slightly warmed) */
+  --gold:     #BC9C6C; /* Earthy gold */
+  --gold-lt:  #DCCFB2; /* Very light earthy gold */
+
+  /* Neutral and Typography */
+  --ink:      #211612; /* Dark dark brown for text */
+  --cream:    #F5F1EB; /* Warm cream background */
+  --warm:     #FAF6F1; /* Warmest background */
+  --warm2:    #D7CCC8; /* Soft stone grey-brown */
+
+  /* Interface Elements */
+  --grey:     #807772; /* Deeper taupe-grey */
+  --mgrey:    #AFA6A1; /* Light taupe-grey */
+  --border:   #D6C2B4; /* Soft tan border color */
+  --shadow:   rgba(62, 39, 35, 0.10); /* Soft shadow, derived from deep-brown */
 }
 
 /* ────────────────────────────────────────────
