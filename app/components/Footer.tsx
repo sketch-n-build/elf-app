@@ -14,10 +14,16 @@ export default function Footer({ minimal = false }: FooterProps) {
             className="flex flex-col sm:flex-row justify-between items-center gap-2 pt-6"
             style={{ borderTop: "1px solid rgba(168,230,216,0.07)" }}
           >
-            <p className="text-[0.68rem]" style={{ color: "rgba(250,246,239,0.2)" }}>
+            <p
+              className="text-[0.68rem]"
+              style={{ color: "rgba(250,246,239,0.2)" }}
+            >
               © 2025 Eleje Legacy. All rights reserved.
             </p>
-            <p className="text-[0.68rem]" style={{ color: "rgba(250,246,239,0.2)" }}>
+            <p
+              className="text-[0.68rem]"
+              style={{ color: "rgba(250,246,239,0.2)" }}
+            >
               304 Lakeview Avenue, Clifton, NJ 07011
             </p>
           </div>
@@ -45,11 +51,14 @@ export default function Footer({ minimal = false }: FooterProps) {
                 color: "rgba(250,246,239,0.38)",
               }}
             >
-              "Every generation plants trees under whose shade they shall never sit — that is the meaning of legacy."
+              "Every generation plants trees under whose shade they shall never
+              sit — that is the meaning of legacy."
             </p>
             <div className="flex gap-[9px]">
               {["f", "in", "tw", "ig"].map((s) => (
-                <div key={s} className="ft-soc">{s}</div>
+                <div key={s} className="ft-soc">
+                  {s}
+                </div>
               ))}
             </div>
           </div>
@@ -69,11 +78,11 @@ export default function Footer({ minimal = false }: FooterProps) {
             </h5>
             <ul className="list-none flex flex-col gap-[10px]">
               {[
-                { label: "About Us",       href: "/about" },
-                { label: "Our Team",       href: "/about" },
+                { label: "About Us", href: "/about" },
+                { label: "Our Team", href: "/about" },
                 { label: "Annual Reports", href: "#" },
-                { label: "Governance",     href: "#" },
-                { label: "Careers",        href: "#" },
+                { label: "Governance", href: "#" },
+                { label: "Careers", href: "#" },
               ].map((item) => (
                 <li key={item.label}>
                   <Link
@@ -136,11 +145,17 @@ export default function Footer({ minimal = false }: FooterProps) {
             </h5>
             <ul className="list-none flex flex-col gap-[10px]">
               {[
-                { label: "Donate",             href: "/donate" },
+                { href: "/programmes", label: "Programmes" },
+                {
+                  href: "https://app.autobooks.co/pay/eleje-legacy",
+                  label: "Donations",
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                },
                 { label: "Join the Community", href: "/auth?tab=signup" },
-                { label: "Volunteer",          href: "#" },
-                { label: "Partner With Us",    href: "#" },
-                { label: "Contact Us",         href: "#" },
+                { label: "Volunteer", href: "#" },
+                { label: "Partner With Us", href: "#" },
+                { label: "Contact Us", href: "#" },
               ].map((item) => (
                 <li key={item.label}>
                   <Link
@@ -158,10 +173,16 @@ export default function Footer({ minimal = false }: FooterProps) {
 
         {/* Bottom */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-2 pt-6">
-          <p className="text-[0.68rem]" style={{ color: "rgba(250,246,239,0.2)" }}>
-            © 2025 Eleje Legacy. All rights reserved.
+          <p
+            className="text-[0.68rem]"
+            style={{ color: "rgba(250,246,239,0.2)" }}
+          >
+            © 2026 Eleje Legacy. All rights reserved.
           </p>
-          <p className="text-[0.68rem]" style={{ color: "rgba(250,246,239,0.2)" }}>
+          <p
+            className="text-[0.68rem]"
+            style={{ color: "rgba(250,246,239,0.2)" }}
+          >
             Registered NGO · Ebonyi State, Nigeria
           </p>
         </div>
