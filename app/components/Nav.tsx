@@ -113,7 +113,7 @@ export default function Nav() {
         <div
           className="fixed top-[68px] left-0 right-0 z-[199] md:hidden"
           style={{
-            background: "rgba(12,24,16,0.97)",
+            background: "var(--emerald)",
             backdropFilter: "blur(18px)",
             borderBottom: "1px solid rgba(52,211,153,0.12)",
           }}
